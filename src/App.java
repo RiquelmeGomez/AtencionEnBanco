@@ -58,8 +58,8 @@ public class App {
                     } else {
                         System.out.println("Atendiendo a: \n"  + cola.poll()); // Remueve y muestra al cliente atendido
                     }
-                    break;1
-                    
+                    break;
+
                 case 3:
                     // Mostrar la lista de clientes en espera
                     if (cola.isEmpty()) {
