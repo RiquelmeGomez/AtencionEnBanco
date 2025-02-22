@@ -1,4 +1,29 @@
 import java.util.Scanner;
+import java.util.PriorityQueue;
+
+// Clase que representa a un Cliente en la cola del banco
+class Cliente implements Comparable<Cliente> {
+    String nombre;
+    boolean esPrioritario;
+
+    // Constructor para inicializar el cliente con nombre y prioridad
+    public Cliente(String nombre, boolean esPrioritario) {
+        this.nombre = nombre;
+        this.esPrioritario = esPrioritario;
+    }
+
+    // Método para comparar clientes por prioridad (los prioritarios van primero)
+    @Override
+    public int compareTo(Cliente otro) {
+        return Boolean.compare(otro.esPrioritario, this.esPrioritario);
+    }
+
+    // Representación en cadena del cliente
+    @Override
+    public String toString() {
+        return nombre + (esPrioritario ? " (Prioritario)" : "");
+    }
+}
 
 public class App {
     public static void main(String[] args) throws Exception {
